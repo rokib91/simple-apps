@@ -25,15 +25,12 @@ app.get("/rokib", (req, res) => {
   res.send("Hello this rokib!");
 });
 
-app.get("/users", (req, res, next) => {
+// Users
+app.get("/users", (req, res) => {
   const sql = "SELECT * FROM tb_data ORDER BY id desc";
-  connection.query(sql, (error, fields) => {
-    res.send(fields);
-    // if (error) {
-    //   console.log("error", error);
-    // } else {
-    //   res.send(fields);
-    // }
+  connection.query(sql, (err, result) => {
+    if (err) throw err;
+    res.send(result);
   });
 });
 
