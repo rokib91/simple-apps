@@ -27,7 +27,7 @@ describe("Unit Test /app2", () => {
 });
 
 describe("Unit Test /rokib", () => {
-  it('"Hello this rokib!', async () => {
+  it('Hello this rokib!"', async () => {
     const response = await request(app).get("/rokib");
     expect(response.status).toBe(200);
   });
