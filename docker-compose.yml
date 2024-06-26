@@ -8,8 +8,6 @@ services:
       - "3000"
     volumes:
       - app-data:/apps/public/images
-    depends_on:
-      - db
 
   db:
     image: "mariadb"
