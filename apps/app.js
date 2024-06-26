@@ -32,15 +32,6 @@ app.get("/users", (req, res, next) => {
   });
 });
 
-// Users
-app.get("/users", (req, res) => {
-  const sql = "SELECT * FROM tb_data ORDER BY id desc";
-  connection.query(sql, (err, result) => {
-    if (err) throw err;
-    res.send(result);
-  });
-});
-
 app.listen(process.env.APP_PORT, () => {
   console.log(`Example app listening on port ${process.env.APP_PORT}`);
 });
