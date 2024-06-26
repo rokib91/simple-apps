@@ -27,14 +27,8 @@ app.get("/rokib", (req, res) => {
 
 app.get("/users", (req, res, next) => {
   const sql = "SELECT * FROM tb_data ORDER BY id desc";
-  connection.connect((err) => {
-    if (err) {
-      res.send(err);
-    } else {
-      connection.query(sql, (fields) => {
-        res.send(fields);
-      });
-    }
+  connection.query(sql, (fields) => {
+    res.send(fields);
   });
 });
 
